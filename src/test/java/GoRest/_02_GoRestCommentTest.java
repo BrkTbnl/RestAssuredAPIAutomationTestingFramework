@@ -18,9 +18,7 @@ public class _02_GoRestCommentTest {
 
     Faker randomGenerator = new Faker();
     int commentID = 0;
-
     RequestSpecification reqSpec;
-
     @BeforeClass
     public void setup() {
 
@@ -67,7 +65,6 @@ public class _02_GoRestCommentTest {
             .spec(reqSpec)
             .when()
             .get("/"+commentID)
-
             .then()
             .log().body()
             .body("id", equalTo(commentID));
@@ -82,7 +79,6 @@ public class _02_GoRestCommentTest {
         given()
             .spec(reqSpec)
             .body(update)
-
             .when()
             .put("/"+commentID)
 
