@@ -57,8 +57,7 @@ public class _02_GoRestCommentTest {
                 .log().body()
                 .statusCode(201)
                 .contentType(ContentType.JSON)
-                .extract().path("id")
-        ;
+                .extract().path("id");
     }
 
     @Test(dependsOnMethods = "createComment")
@@ -71,8 +70,7 @@ public class _02_GoRestCommentTest {
 
             .then()
             .log().body()
-            .body("id", equalTo(commentID))
-        ;
+            .body("id", equalTo(commentID));
     }
 
     @Test(dependsOnMethods = "getComment")
@@ -92,8 +90,7 @@ public class _02_GoRestCommentTest {
             .log().body()
             .statusCode(200)
             .body("id", equalTo(commentID))
-            .body("name", equalTo("bt"))
-        ;
+            .body("name", equalTo("bt"));
     }
 
     @Test(dependsOnMethods = "updateComment")
@@ -120,7 +117,6 @@ public class _02_GoRestCommentTest {
 
             .then()
             .log().body()
-            .statusCode(404)
-        ;
+            .statusCode(404);
     }
 }
