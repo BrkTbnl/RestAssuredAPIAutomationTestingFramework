@@ -106,9 +106,7 @@ public class _02_GoRestCommentTest {
 
             .then()
             .log().all()
-            .statusCode(204)
-        ;
-
+            .statusCode(204);
     }
 
     @Test(dependsOnMethods = "deleteComment")
